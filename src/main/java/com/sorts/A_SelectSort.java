@@ -29,6 +29,9 @@ public class A_SelectSort {
     }
 
     public static void swap(int[] data, int i, int j) {
+        if (i == j) {
+            return;
+        }
         data[i] = data[i] + data[j];
         data[j] = data[i] - data[j];
         data[i] = data[i] - data[j];
