@@ -5,7 +5,7 @@ package com.sorts;
  */
 public class I_BucketSort {
     public static void main(String[] args) {
-        int[] data = new int[]{33, 5, 35, 3, 6, 2, 23, 90, 1, 9, 32, 4, 12, 8, 7, 7, 8, 35};
+        int[] data = new int[]{33, 5, 35, 3, 6, 2, 23, 90, 1, 9, 32, 4, 12, 8, 7, 7, 8, 35, 0};
         System.out.println("BucketSort");
         print("Begin:", data);
         bucketSort(data);
@@ -13,16 +13,16 @@ public class I_BucketSort {
     }
 
     public static void bucketSort(int[] data){
-        int[] temp = new int[100];
+        int[] temp = new int[101];
         for(int i=0; i<data.length; i++){
-            temp[data[i]-1]++;
+            temp[data[i]]++;
         }
 
         int dataIndex = 0;
         for(int i=0; i<temp.length; i++){
             if(temp[i]!=0){
                 for(int j=0; j<temp[i]; j++){
-                    data[dataIndex] = i+1 ;
+                    data[dataIndex] = i ;
                     dataIndex++;
                 }
             }
