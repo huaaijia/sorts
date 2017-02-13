@@ -6,7 +6,7 @@ package com.sorts;
 public class H_MergeSort {
     public static void main(String[] args) {
         int[] data = new int[]{33, 5, 35, 3, 6, 2, 23, 90, 1, 9, 32, 4, 12, 8, 7};
-        System.out.println("InsertSort");
+        System.out.println("MergeSort");
         print("Begin:", data);
         mergeSort(data);
         print("End:", data);
