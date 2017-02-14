@@ -13,6 +13,7 @@ public class A_SelectSort {
         print("End:", data);
     }
 
+    //找到最小值下标
     public static void selectSort(int[] data) {
         for (int i = 0; i < data.length - 1; i++) {
             int minIndex = i;
