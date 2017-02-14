@@ -16,25 +16,29 @@ public class G_ShellSort {
 
     /**
      * 缩小步长排序
+     *
      * @param data
      */
     public static void shellSort(int[] data) {
-        for(int step = data.length/2; step>=1; step = step/2){//步长
-            for(int i=0; i<step; i++){//当前步长下，分多少组排序
+        for (int step = data.length / 2; step >= 1; step = step / 2) {//步长
+            for (int i = 0; i < step; i++) {//当前步长下，分多少组排序
 
                 //改良版快速排序
-                for (int j = i+step; j < data.length; j=j+step) {
-                    if (data[j] < data[j - step]) {
-                        int temp = data[j];
-                        int j2 = j - step;
-                        while (j2 >= 0 && temp < data[j2]) {
-                            data[j2 + step] = data[j2];
-                            j2=j2-step;
+                for (int index = i + step; index < data.length; index = index + step) {
+                    if (data[index] < data[index - step]) {
+                        int temp = data[index];
+                        int idx_pro_its = index - step; //当前索引前面那些需要比较的对象
+                        while (idx_pro_its >= 0 && temp < data[idx_pro_its]) {
+                            data[idx_pro_its + step] = data[idx_pro_its];
+                            idx_pro_its = idx_pro_its - step;
                         }
-                        data[j2 + step] = temp;
-                        print("第" + j + "次：", data);
+                        data[idx_pro_its + step] = temp;
                     }
+
+
+                    print("步长-分组-idx   " + step + "-" + (i+1) + "-" + index + "：", data);
                 }
+
             }
         }
     }
