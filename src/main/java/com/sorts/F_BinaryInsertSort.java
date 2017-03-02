@@ -23,7 +23,7 @@ public class F_BinaryInsertSort {
                 int temp = data[i];
                 int low = 0;
                 int high = i-1;
-                while(low<=high){//重点<=
+                while(low<high){//重点<=
                     int mid = (low+high)/2;
                     if(data[mid]<temp){
                         low = mid+1;

@@ -23,7 +23,7 @@ public class G_ShellSort {
         for (int step = data.length / 2; step >= 1; step = step / 2) {//步长
             for (int i = 0; i < step; i++) {//当前步长下，分多少组排序
 
-                //改良版快速排序
+                //改良版插入排序
                 for (int index = i + step; index < data.length; index = index + step) {
                     if (data[index] < data[index - step]) {
                         int temp = data[index];
